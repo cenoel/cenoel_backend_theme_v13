@@ -3,13 +3,13 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 {
-    "name": "Cenoel backend theme odoo v12",
-    "summary": "Cenoel backend theme odoo v12",
+    "name": "Cenoel backend theme odoo v13",
+    "summary": "Cenoel backend theme odoo v13",
     "version": "12.0.0.1",
     "category": "Theme/Backend",
     "website": "",
     "description": """
-		Backend theme for Odoo 12.0 community edition.
+		Backend theme for Odoo 13.0 community edition.
     """,
     'images': [
         'images/screen.png'
