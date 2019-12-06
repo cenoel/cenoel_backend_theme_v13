@@ -21,6 +21,7 @@
     ],
     "data": [
         'views/assets.xml',
+        'views/res_company_views.xml',
         'views/sidebar.xml',
     ],
     'qweb': [

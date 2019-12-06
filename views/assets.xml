@@ -7,15 +7,32 @@
 -->
 
 <odoo>
-    <data>
-		<template id="assets_backend" name="Cenoel Backend Theme" inherit_id="web.assets_backend">
-		<xpath expr=".">
-                <link rel="stylesheet" href="/cenoel_backend_theme/static/src/scss/style.scss"/>
-				<link rel="stylesheet" href="/cenoel_backend_theme/static/src/scss/sidebar.scss"/>
-				<script type="application/javascript" src="/cenoel_backend_theme/static/src/js/sidebar.js"/>
-				<script type="application/javascript" src="/cenoel_backend_theme/static/src/js/loading.js"/>
-				<script type="application/javascript" src="/cenoel_backend_theme/static/src/js/menu.js"/>
-			</xpath>
-		</template>
-    </data>
+  <data>
+    <template id="assets_variables" name="Backend Theme Variables" inherit_id="web._assets_helpers">
+      <xpath expr="//t[@t-call='web._assets_secondary_variables']" position="after">
+        <style type="text/scss">
+          $brand-primary: #0697b8;
+          $brand-secondary: #6eb2c2;
+        </style>
+        <t t-set="user_company" t-value="request.env.user.company_id"/>
+        <style type="text/scss">
+          <t t-if="user_company.brand_primary">
+            $brand-primary:<t t-esc="user_company.brand_primary"/>;
+          </t>
+          <t t-if="user_company.brand_secondary">
+            $brand-secondary:<t t-esc="user_company.brand_secondary"/>;
+          </t>
+        </style>
+      </xpath>
+    </template>
+    <template id="assets_backend" name="Cenoel Backend Theme" inherit_id="web.assets_backend">
+      <xpath expr=".">
+        <link rel="stylesheet" href="/cenoel_backend_theme/static/src/scss/style.scss"/>
+        <link rel="stylesheet" href="/cenoel_backend_theme/static/src/scss/sidebar.scss"/>
+        <script type="application/javascript" src="/cenoel_backend_theme/static/src/js/sidebar.js"/>
+        <script type="application/javascript" src="/cenoel_backend_theme/static/src/js/loading.js"/>
+        <script type="application/javascript" src="/cenoel_backend_theme/static/src/js/menu.js"/>
+      </xpath>
+    </template>
+  </data>
 </odoo>
